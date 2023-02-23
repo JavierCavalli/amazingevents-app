@@ -1,0 +1,208 @@
+/* HOME */
+
+/* NAVBAR */
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 20px 0px 20px;
+}
+
+.logo-container {
+  margin: 20px;
+}
+
+.navbar-link-container {
+  margin-top: 40px;
+}
+
+.navbar-links {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-link-a {
+  color: #000;
+  text-decoration: none;
+  margin: 20px;
+}
+
+/* SLIDER */
+
+.slider-main-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.slider-chevron {
+  text-decoration: none;
+  color: #000;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.slider-page {
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* CHECK & SEARCHBAR */
+
+.check-search-main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.check-container {
+  display: flex;
+  margin: 20px 0px 0px 15px;
+}
+
+.form-check {
+  margin: 10px;
+}
+
+.fa fa-search {
+  width: 50px;
+  height: 50px;
+}
+
+.searchbar-container {
+  display: flex;
+  height: 40px;
+  margin: 25px 20px 0px 0px;
+}
+
+.button-search {
+  background-color: #fff;
+  border: none;
+}
+
+/* CARDS */
+
+.cards-main-container {
+  display: flex;
+}
+
+.card {
+  margin: 30px;
+}
+
+.card-body {
+  display: grid;
+  text-align: center;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-price {
+  margin-top: 10px;
+}
+
+.btn {
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border: #000 2px solid;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  transition: 0.3s;
+}
+
+/* FOOTER */
+
+.footer-main-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
+}
+
+.icon {
+  margin: 10px;
+  color: #000;
+}
+
+.cohort {
+  margin-top: 15px;
+}
+
+/* CONTACT */
+
+.contact-main-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px 50px 0px;
+}
+
+.contact-input {
+  width: 100%;
+}
+
+.contact-p {
+  margin: 0px;
+}
+
+.contact-button-container {
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+}
+
+.contact-button {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 5px 20px 5px 20px;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background: #000;
+  color: #fff;
+  transition: 0.4s;
+}
+
+/* STATS */
+
+.column-bg-title {
+  border: #000 1px solid;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #fff;
+  background-color: #000;
+}
+
+.column-bg {
+  border: #000 1px solid;
+}
+
+/* DETAILS */
+
+.details-main-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  border: #000 1px solid;
+  padding: 50px;
+  margin: 50px 200px 50px 200px;
+}
+
+.detail-image-container {
+  border: #000 1px solid;
+  padding: 20px;
+}
+
+.details-text-container {
+  border: #000 1px solid;
+  padding: 20px;
+  margin-left: 20px;
+}
