@@ -84,6 +84,7 @@
 
 .cards-main-container {
   display: flex;
+  justify-content: center;
 }
 
 .card {
@@ -205,4 +206,59 @@
   border: #000 1px solid;
   padding: 20px;
   margin-left: 20px;
+}
+
+/* HAMBURGUER ICON */
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1000px) {
+  .check-search-main-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .check-container {
+    display: grid;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .form-check {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .form-check-input {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .navbar-link-container {
+    display: none;
+  }
+
+  .navbar-container {
+    justify-content: center;
+  }
+
+  .detail-image-container {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .details-main-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+  .details-text-container {
+    display: grid;
+    margin-right: 15px;
+  }
 }
