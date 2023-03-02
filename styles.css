@@ -82,6 +82,28 @@
 
 /* CARDS */
 
+.event-list-test-test {
+  display: flex;
+}
+
+.event-list-test {
+}
+
+.event-info {
+  justify-content: center;
+  align-items: center;
+}
+
+.event-title {
+  font-size: 24px;
+  color: red;
+}
+
+.event-image {
+  height: 300px;
+  width: 300px;
+}
+
 .cards-main-container {
   display: flex;
   justify-content: center;
@@ -209,6 +231,38 @@
 }
 
 /* HAMBURGUER ICON */
+
+/* GRID ATTEMPT */
+
+#events {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, auto);
+  grid-gap: 20px;
+}
+
+.event-info {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.event-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.event-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.event-info p {
+  margin: 5px 0;
+}
 
 /* MEDIA QUERIES */
 

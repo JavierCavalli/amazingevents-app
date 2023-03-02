@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
+    <script src="path/to/your/js/file.js"></script>
 
     <title>Amazing Events</title>
   </head>
   <body>
     <div class="home-main-container">
-    
+
       <nav>
         <div class="navbar-container">
           <div class="logo-container">
@@ -60,8 +61,7 @@
                     <div class="form-check">
                         <input class="check-input-style" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
-                          Category
-                        </label>
+                          Category                        </label>
                       </div>
                     <div class="form-check">
                         <input class="check-input-style" type="checkbox" value="" id="flexCheckDefault">
@@ -92,8 +92,33 @@
             <!-- CARDS --> 
             <div class="cards-main-container row">
 
-          
-                <div class="card col-md-12" style="width: 18rem;">
+                <div class="event-list-test-test" id="events"></div>
+                <script src="data.js"></script>
+                <script>
+                  const eventsDiv = document.getElementById("events");
+                  const events = data.events;
+
+                  for (let i = 0; i < events.length; i++) {
+                    const event = events[i];
+                    const eventDiv = document.createElement("div");
+                    eventDiv.innerHTML = `
+                    <div class="event-info">
+                    <h2 class="event-title">${event.name}</h2>
+                      <img class="event-image" src="${event.image}" alt="${event.name}" />
+                      <p>Date: ${event.date}</p>
+                      <p>Description: ${event.description}</p>
+                      <p>Category: ${event.category}</p>
+                      <p>Place: ${event.place}</p>
+                      <p>Capacity: ${event.capacity}</p>
+                      <p>Assistance: ${event.assistance}</p>
+                      <p>Price: $${event.price}</p>
+                    </div>
+                    `;
+                    eventsDiv.appendChild(eventDiv);
+                  }
+                </script>     
+              
+                <!-- <div class="card col-md-12" style="width: 18rem;">
                     <img src="assets/Museum_Tour.jpg" class="card-img-top" alt="cinema">
                     <div class="card-body">
                       <h5 class="card-title">Titulo</h5>
@@ -155,7 +180,7 @@
                             </div>
                         </div>
                     </div>
-                  </div>
+                  </div> -->
             </div>
 
             <!-- FOOTER -->

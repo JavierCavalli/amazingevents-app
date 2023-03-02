@@ -87,70 +87,41 @@
 
             <!-- CARDS -->
             <div class="cards-main-container row">
-              
-                <div class="card" style="width: 18rem;">
-                    <img src="assets/Marathon.jpg" class="card-img-top" alt="cinema">
-                    <div class="card-body">
-                      <h5 class="card-title">Titulo</h5>
-                      <p class="card-text">Texto descriptivo<p>
-                        <div class="card-bottom">
-                            <div class="card-price">
-                                <p>Price: 0000$</p>
-                            </div>
-                            <div>
-                                <a href="/details.html" class="btn btn-primary">Ver Evento</a>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
 
-                  <div class="card" style="width: 18rem;">
-                    <img src="assets/Museum_Tour.jpg" class="card-img-top" alt="cinema">
-                    <div class="card-body">
-                      <h5 class="card-title">Titulo</h5>
-                      <p class="card-text">Texto descriptivo<p>
-                        <div class="card-bottom">
-                            <div class="card-price">
-                                <p>Price: 0000$</p>
-                            </div>
-                            <div>
-                                <a href="/details.html" class="btn btn-primary">Ver Evento</a>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
+              <div class="event-list-test-test" id="events"></div>
+                <script src="data.js"></script>
+                <script>
+                  const eventsDiv = document.getElementById("events");
+                  const events = data.events;
+                  const currentDate = new Date(data.currentDate);
 
-                  <div class="card" style="width: 18rem;">
-                    <img src="assets/Music_Concert.jpg" class="card-img-top" alt="cinema">
-                    <div class="card-body">
-                      <h5 class="card-title">Titulo</h5>
-                      <p class="card-text">Texto descriptivo<p>
-                        <div class="card-bottom">
-                            <div class="card-price">
-                                <p>Price: 0000$</p>
-                            </div>
-                            <div>
-                                <a href="/details.html" class="btn btn-primary">Ver Evento</a>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
+                  for (let i = 0; i < events.length; i++) {
+                    const event = events[i];
+                    const eventDate = new Date(event.date);
 
-                  <div class="card" style="width: 18rem;">
-                    <img src="assets/Cinema.jpg" class="card-img-top" alt="cinema">
-                    <div class="card-body">
-                      <h5 class="card-title">Titulo</h5>
-                      <p class="card-text">Texto descriptivo<p>
-                        <div class="card-bottom">
-                            <div class="card-price">
-                                <p>Price: 0000$</p>
-                            </div>
-                            <div>
-                                <a href="/details.html" class="btn btn-primary">Ver Evento</a>
-                            </div>
+                    // Only display events that occur after the current date
+                    if (eventDate > currentDate) {
+                      const eventDiv = document.createElement("div");
+                      eventDiv.innerHTML = `
+                        <div class="event-info">
+                          <h2 class="event-title">${event.name}</h2>
+                          <img class="event-image" src="${event.image}" alt="${event.name}" />
+                          <p>Date: ${event.date}</p>
+                          <p>Description: ${event.description}</p>
+                          <p>Category: ${event.category}</p>
+                          <p>Place: ${event.place}</p>
+                          <p>Capacity: ${event.capacity}</p>
+                          <p>Assistance: ${event.assistance}</p>
+                          <p>Price: $${event.price}</p>
                         </div>
-                    </div>
-                  </div>
+                      `;
+                      eventsDiv.appendChild(eventDiv);
+                    }
+                  }
+                </script>
+
+   
+
             </div>
 
             <!-- FOOTER -->
