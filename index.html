@@ -52,37 +52,45 @@
             <hr class="solid">
 
             <!-- CHECKBOXES -->
-            <div class="checkboxes-main">
-              <div>
-                <input type="checkbox" id="food-fair-checkbox" />
-                <label for="food-fair-checkbox">Food Fair</label>
+            <div class="checkboxes-search-main">
+              <div class="checkboxes-main">
+                <div>
+                  <input type="checkbox" id="food-fair-checkbox" />
+                  <label for="food-fair-checkbox">Food Fair</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="museum-checkbox" />
+                  <label for="museum-checkbox">Museum</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="costume-party-checkbox" />
+                  <label for="costume-party-checkbox">Costume Party</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="music-concert-checkbox" />
+                  <label for="music-concert-checkbox">Music Concert</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="race-checkbox" />
+                  <label for="race-checkbox">Race</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="book-exchange-checkbox" />
+                  <label for="book-exchange-checkbox">Book Exchange</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="cinema-checkbox" />
+                  <label for="cinema-checkbox">Cinema</label>
+                </div>
               </div>
+
               <div>
-                <input type="checkbox" id="museum-checkbox" />
-                <label for="museum-checkbox">Museum</label>
-              </div>
-              <div>
-                <input type="checkbox" id="costume-party-checkbox" />
-                <label for="costume-party-checkbox">Costume Party</label>
-              </div>
-              <div>
-                <input type="checkbox" id="music-concert-checkbox" />
-                <label for="music-concert-checkbox">Music Concert</label>
-              </div>
-              <div>
-                <input type="checkbox" id="race-checkbox" />
-                <label for="race-checkbox">Race</label>
-              </div>
-              <div>
-                <input type="checkbox" id="book-exchange-checkbox" />
-                <label for="book-exchange-checkbox">Book Exchange</label>
-              </div>
-              <div>
-                <input type="checkbox" id="cinema-checkbox" />
-                <label for="cinema-checkbox">Cinema</label>
+                <input class="search-bar-test" type="text" id="search-input" placeholder="Search by name">
+                <!-- <button class="search-button" id="search-button">Search</button> -->
+                <div id="search-results"></div>
               </div>
             </div>
-              
+
 
               <!-- CARDS --> 
               <div class="cards-main-container row" id="events"></div>
@@ -91,7 +99,11 @@
                 const eventsDiv = document.getElementById("events");
                 const events = data.events;
 
-                function renderEvents(filteredEvents) {
+                function renderEvents(searchTerm) {
+                  const filteredEvents = events.filter(event =>
+                    event.name.toLowerCase().includes(searchTerm.toLowerCase())
+                  );
+
                   const eventHTML = filteredEvents.map(event => `
                     <div class="event-info">
                       <h2 class="event-title">${event.name}</h2>
@@ -105,10 +117,18 @@
                       <p>Price: $${event.price}</p>
                     </div>
                   `);
+
                   eventsDiv.innerHTML = eventHTML.join('');
                 }
 
-                renderEvents(events);
+                // Call renderEvents() with the initial search term (empty string)
+                renderEvents('');
+
+                // Add event listener to search input
+                const searchInput = document.getElementById('search-input');
+                searchInput.addEventListener('input', () => {
+                  renderEvents(searchInput.value);
+                });
 
                 const foodFairCheckbox = document.getElementById("food-fair-checkbox");
                 const museumCheckbox = document.getElementById("museum-checkbox");
@@ -167,11 +187,6 @@
                 cinemaCheckbox.addEventListener("change", filterEvents);
               </script>
 
-
-
-
-
-                    </div>
 
             <!-- FOOTER -->
 
