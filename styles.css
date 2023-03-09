@@ -50,6 +50,12 @@
 
 /* CHECK & SEARCHBAR */
 
+.checkboxes-main {
+  display: flex;
+  gap: 20px;
+  margin-left: 20px;
+}
+
 .check-search-main-container {
   display: flex;
   justify-content: space-between;
