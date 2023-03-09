@@ -56,10 +56,48 @@
   margin-left: 20px;
 }
 
+.checkboxes-search-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-input {
+  margin-right: 20px;
+}
+
 .check-search-main-container {
   display: flex;
   justify-content: space-between;
 }
+
+.search-button-container {
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+}
+
+.search-button {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 3px 20px 3px 20px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.search-button:hover {
+  background: #000;
+  color: #fff;
+  transition: 0.4s;
+}
+
+.search-bar-test {
+  margin-right: 20px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+/* APARTE */
 
 .check-container {
   display: flex;
