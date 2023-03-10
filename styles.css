@@ -59,6 +59,7 @@
 .checkboxes-search-main {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .search-input {
@@ -82,6 +83,7 @@
   padding: 3px 20px 3px 20px;
   cursor: pointer;
   margin-right: 20px;
+  margin-bottom: 5px;
 }
 
 .search-button:hover {
@@ -95,6 +97,34 @@
   border: 1px solid #000;
   border-radius: 3px;
   padding: 5px;
+}
+
+.event-details-btn {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 3px 20px 3px 20px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.event-details-btn:hover {
+  background: #000;
+  color: #fff;
+  transition: 0.4s;
+}
+
+.details-button {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 3px 20px 3px 20px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.details-button:hover {
+  background: #000;
+  color: #fff;
+  transition: 0.4s;
 }
 
 /* APARTE */
@@ -128,9 +158,6 @@
 
 .event-list-test-test {
   display: flex;
-}
-
-.event-list-test {
 }
 
 .event-info {
@@ -252,28 +279,6 @@
   border: #000 1px solid;
 }
 
-/* DETAILS */
-
-.details-main-container {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  border: #000 1px solid;
-  padding: 50px;
-  margin: 50px 200px 50px 200px;
-}
-
-.detail-image-container {
-  border: #000 1px solid;
-  padding: 20px;
-}
-
-.details-text-container {
-  border: #000 1px solid;
-  padding: 20px;
-  margin-left: 20px;
-}
-
 /* HAMBURGUER ICON */
 
 /* GRID ATTEMPT */
@@ -286,8 +291,10 @@
 }
 
 .event-info {
+  width: 85%;
+  margin: 0 auto;
   background-color: #fff;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -306,6 +313,46 @@
 
 .event-info p {
   margin: 5px 0;
+}
+
+/* INDIVIDUAL EVENT CARD INFO */
+
+.event-info-card {
+    display: grid;
+    width: 50%;    
+    margin: 0 auto;  
+    text-align: center;
+    }
+  
+.event-image-card {
+    display: flex;
+    justify-self: center;
+    width: 450px;
+  }
+
+.event-title-card {
+  font-size: 54px;
+  color: rgba(225, 0, 0, 0.722);
+}
+
+.event-date-card {
+  font-weight: 600;
+  font-size: 40px;
+  margin: 20px 0px 0px 0px;
+}
+
+.event-description-card {
+  font-size: 24px;
+  font-weight: 600px;
+}
+
+.event-categories-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.event-category {
+  margin: 4px;
 }
 
 /* MEDIA QUERIES */
