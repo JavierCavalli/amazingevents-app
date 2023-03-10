@@ -55,31 +55,31 @@
             <div class="checkboxes-search-main">
               <div class="checkboxes-main">
                 <div>
-                  <input type="checkbox" id="food-fair-checkbox" />
+                  <input type="checkbox" id="food-fair-checkbox" class="category-checkbox" />
                   <label for="food-fair-checkbox">Food Fair</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="museum-checkbox" />
+                  <input type="checkbox" id="museum-checkbox" class="category-checkbox" />
                   <label for="museum-checkbox">Museum</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="costume-party-checkbox" />
+                  <input type="checkbox" id="costume-party-checkbox" class="category-checkbox" />
                   <label for="costume-party-checkbox">Costume Party</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="music-concert-checkbox" />
+                  <input type="checkbox" id="music-concert-checkbox" class="category-checkbox" />
                   <label for="music-concert-checkbox">Music Concert</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="race-checkbox" />
+                  <input type="checkbox" id="race-checkbox" class="category-checkbox" />
                   <label for="race-checkbox">Race</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="book-exchange-checkbox" />
+                  <input type="checkbox" id="book-exchange-checkbox" class="category-checkbox" />
                   <label for="book-exchange-checkbox">Book Exchange</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="cinema-checkbox" />
+                  <input type="checkbox" id="cinema-checkbox" class="category-checkbox" />
                   <label for="cinema-checkbox">Cinema</label>
                 </div>
               </div>
@@ -117,10 +117,20 @@
                       <p>Capacity: ${event.capacity}</p>
                       <p>Assistance: ${event.assistance}</p>
                       <p>Price: $${event.price}</p>
+                      <button class="event-details-btn" data-event-id="${event._id}">Details</button>
                     </div>
                   `);
 
                 eventsDiv.innerHTML = eventHTML.join('');
+
+                // Add event listeners to the event details buttons
+                const eventDetailsButtons = document.querySelectorAll(".event-details-btn");
+                eventDetailsButtons.forEach(button => {
+                  button.addEventListener("click", () => {
+                    const eventId = button.dataset.eventId;
+                    window.location.href = `event.html?id=${eventId}`;
+                  });
+                });
               }
 
                 // Call renderEvents() with the initial search term (empty string)
