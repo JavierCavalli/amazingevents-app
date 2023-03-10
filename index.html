@@ -99,12 +99,14 @@
                 const eventsDiv = document.getElementById("events");
                 const events = data.events;
 
-                function renderEvents(searchTerm) {
-                  const filteredEvents = events.filter(event =>
-                    event.name.toLowerCase().includes(searchTerm.toLowerCase())
-                  );
+                function renderEvents(searchTerm, filteredEvents) {
+                const eventsToRender = filteredEvents || events;
 
-                  const eventHTML = filteredEvents.map(event => `
+                const eventHTML = eventsToRender
+                  .filter(event =>
+                    event.name.toLowerCase().includes(searchTerm.toLowerCase())
+                  )
+                  .map(event => `
                     <div class="event-info">
                       <h2 class="event-title">${event.name}</h2>
                       <img class="event-image" src="${event.image}" alt="${event.name}" />
@@ -118,8 +120,8 @@
                     </div>
                   `);
 
-                  eventsDiv.innerHTML = eventHTML.join('');
-                }
+                eventsDiv.innerHTML = eventHTML.join('');
+              }
 
                 // Call renderEvents() with the initial search term (empty string)
                 renderEvents('');
@@ -138,46 +140,7 @@
                 const bookExchangeCheckbox = document.getElementById("book-exchange-checkbox");
                 const cinemaCheckbox = document.getElementById("cinema-checkbox");
 
-                function filterEvents() {
-                  const showFoodFairEvents = foodFairCheckbox.checked;
-                  const showMuseumEvents = museumCheckbox.checked;
-                  const showCostumePartyEvents = costumePartyCheckbox.checked;
-                  const showMusicConcertEvents = musicConcertCheckbox.checked;
-                  const showRaceEvents = raceCheckbox.checked;
-                  const showBookExchangeEvents = bookExchangeCheckbox.checked;
-                  const showCinemaEvents = cinemaCheckbox.checked;
-
-                  const filteredEvents = data.events.filter((event) => {
-                    if (showFoodFairEvents && event.category === "Food Fair") {
-                      return true;
-                    }
-                    if (showMuseumEvents && event.category === "Museum") {
-                      return true;
-                    }
-                    if (showCostumePartyEvents && event.category === "Costume Party") {
-                      return true;
-                    }
-                    if (showMusicConcertEvents && event.category === "Music Concert") {
-                      return true;
-                    }
-                    if (showRaceEvents && event.category === "Race") {
-                      return true;
-                    }
-                    if (showBookExchangeEvents && event.category === "Book Exchange") {
-                      return true;
-                    }
-                    if (showCinemaEvents && event.category === "Cinema") {
-                      return true;
-                    }
-                    if (!showFoodFairEvents && !showMuseumEvents && !showCostumePartyEvents && !showMusicConcertEvents && !showRaceEvents && !showBookExchangeEvents && !showCinemaEvents) {
-                      return true;
-                    }
-                    return false;
-                  });
-
-                  renderEvents(filteredEvents);
-                }
-
+                // Add event listener to each checkbox to call the filterEvents function when the checkbox is clicked
                 foodFairCheckbox.addEventListener("change", filterEvents);
                 museumCheckbox.addEventListener("change", filterEvents);
                 costumePartyCheckbox.addEventListener("change", filterEvents);
@@ -185,6 +148,50 @@
                 raceCheckbox.addEventListener("change", filterEvents);
                 bookExchangeCheckbox.addEventListener("change", filterEvents);
                 cinemaCheckbox.addEventListener("change", filterEvents);
+
+                function filterEvents() {
+                const searchTerm = searchInput.value;
+                const showFoodFairEvents = foodFairCheckbox.checked;
+                const showMuseumEvents = museumCheckbox.checked;
+                const showCostumePartyEvents = costumePartyCheckbox.checked;
+                const showMusicConcertEvents = musicConcertCheckbox.checked;
+                const showRaceEvents = raceCheckbox.checked;
+                const showBookExchangeEvents = bookExchangeCheckbox.checked;
+                const showCinemaEvents = cinemaCheckbox.checked;
+
+                const filteredEvents = events.filter(event => {
+                  // Check if the event name matches the search term
+                  if (event.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    // Check if the event category matches any of the selected checkboxes
+                    if (
+                      (showFoodFairEvents && event.category === "Food Fair") ||
+                      (showMuseumEvents && event.category === "Museum") ||
+                      (showCostumePartyEvents && event.category === "Costume Party") ||
+                      (showMusicConcertEvents && event.category === "Music Concert") ||
+                      (showRaceEvents && event.category === "Race") ||
+                      (showBookExchangeEvents && event.category === "Book Exchange") ||
+                      (showCinemaEvents && event.category === "Cinema")
+                    ) {
+                      return true;
+                    }
+                    // If no checkboxes are selected, just check if the event name matches the search term
+                    if (
+                      !showFoodFairEvents &&
+                      !showMuseumEvents &&
+                      !showCostumePartyEvents &&
+                      !showMusicConcertEvents &&
+                      !showRaceEvents &&
+                      !showBookExchangeEvents &&
+                      !showCinemaEvents
+                    ) {
+                      return true;
+                    }
+                  }
+                  return false;
+                });
+
+                renderEvents(searchTerm, filteredEvents);
+              }
               </script>
 
 
