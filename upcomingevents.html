@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="/favicon.png">
 
 
 
@@ -44,79 +45,149 @@
             </div>
             <hr class="solid">
 
-            <!-- CHECKBOXES & SEARCH -->
-            <div class="check-search-main-container">
-                <div class="check-container">
-                    <div class="form-check">
-                        <input class="" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Category
-                        </label>
-                      </div>
-                    <div class="form-check">
-                        <input class="" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Category
-                        </label>
-                      </div>
-                    <div class="form-check">
-                        <input class="" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Category
-                        </label>
-                      </div>
-                    <div class="form-check">
-                        <input class="" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Category
-                        </label>
-                      </div>
-                    <div class="form-check">
-                        <input class="" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Category
-                        </label>
-                      </div>
+            <!-- CHECKBOXES -->
+            <div class="checkboxes-search-main">
+              <div class="checkboxes-main">
+                <div>
+                  <input type="checkbox" id="food-fair-checkbox" />
+                  <label for="food-fair-checkbox">Food Fair</label>
                 </div>
+                <div>
+                  <input type="checkbox" id="museum-checkbox" />
+                  <label for="museum-checkbox">Museum</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="costume-party-checkbox" />
+                  <label for="costume-party-checkbox">Costume Party</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="music-concert-checkbox" />
+                  <label for="music-concert-checkbox">Music Concert</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="race-checkbox" />
+                  <label for="race-checkbox">Race</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="book-exchange-checkbox" />
+                  <label for="book-exchange-checkbox">Book Exchange</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="cinema-checkbox" />
+                  <label for="cinema-checkbox">Cinema</label>
+                </div>
+              </div>
 
-                <div class="searchbar-container">
-                    <input type="Search" placeholder="Search">
-                    <button class="button-search"><i class="fas fa-search fa-lg"></i></button>                    
-                </div>
+              <div>
+                <input class="search-bar-test" type="text" id="search-input" placeholder="Search by name">
+                <!-- <button class="search-button" id="search-button">Search</button> -->
+                <div id="search-results"></div>
+              </div>
             </div>
 
-            <!-- CARDS -->
-            <div class="cards-main-container row">
 
-              <div class="event-list-test-test" id="events"></div>
-                <script src="data.js"></script>
-                <script>
-                  const eventsDiv = document.getElementById("events");
-                  const events = data.events;
-                  const currentDate = new Date(data.currentDate);
+              <!-- CARDS --> 
+              <div class="cards-main-container row" id="events"></div>
+              <script src="data.js"></script>
+              <script>
+                const eventsDiv = document.getElementById("events");
+                const events = data.events;
 
-                  const pastEventsHTML = events
-                    .filter(event => new Date(event.date) > currentDate)
-                    .map(event => `
-                      <div class="event-info">
-                        <h2 class="event-title">${event.name}</h2>
-                        <img class="event-image" src="${event.image}" alt="${event.name}" />
-                        <p>Date: ${event.date}</p>
-                        <p>Description: ${event.description}</p>
-                        <p>Category: ${event.category}</p>
-                        <p>Place: ${event.place}</p>
-                        <p>Capacity: ${event.capacity}</p>
-                        <p>Assistance: ${event.assistance}</p>
-                        <p>Price: $${event.price}</p>
-                      </div>
-                    `);
+                function renderEvents(searchTerm, filteredEvents) {
+                  const eventsToRender = (filteredEvents || events)
+                    .filter(event => event.date >= data.currentDate)
+                    .filter(event =>
+                      event.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    )
+                    .map(
+                      (event) => `
+                        <div class="event-info">
+                          <h2 class="event-title">${event.name}</h2>
+                          <<img class="event-image" src="${event.image}" alt="${event.name}" />
+                          <p>Date: ${event.date}</p>
+                          <p>Description: ${event.description}</p>
+                          <p>Category: ${event.category}</p>
+                          <p>Place: ${event.place}</p>
+                          <p>Capacity: ${event.capacity}</p>
+                          <p>Assistance: ${event.assistance}</p>
+                          <p>Price: $${event.price}</p>
+                        </div>
+                      `
+                    );
 
-                  eventsDiv.innerHTML = pastEventsHTML.join('');
-                </script>
+                  eventsDiv.innerHTML = eventsToRender.join("");
+                }
 
-   
+                // Call renderEvents() with the initial search term (empty string)
+                renderEvents("");
 
-            </div>
+                // Add event listener to search input
+                const searchInput = document.getElementById('search-input');
+                searchInput.addEventListener('input', () => {
+                  renderEvents(searchInput.value);
+                });
+
+                const foodFairCheckbox = document.getElementById("food-fair-checkbox");
+                const museumCheckbox = document.getElementById("museum-checkbox");
+                const costumePartyCheckbox = document.getElementById("costume-party-checkbox");
+                const musicConcertCheckbox = document.getElementById("music-concert-checkbox");
+                const raceCheckbox = document.getElementById("race-checkbox");
+                const bookExchangeCheckbox = document.getElementById("book-exchange-checkbox");
+                const cinemaCheckbox = document.getElementById("cinema-checkbox");
+
+                // Add event listener to each checkbox to call the filterEvents function when the checkbox is clicked
+                foodFairCheckbox.addEventListener("change", filterEvents);
+                museumCheckbox.addEventListener("change", filterEvents);
+                costumePartyCheckbox.addEventListener("change", filterEvents);
+                musicConcertCheckbox.addEventListener("change", filterEvents);
+                raceCheckbox.addEventListener("change", filterEvents);
+                bookExchangeCheckbox.addEventListener("change", filterEvents);
+                cinemaCheckbox.addEventListener("change", filterEvents);
+
+                function filterEvents() {
+                const searchTerm = searchInput.value;
+                const showFoodFairEvents = foodFairCheckbox.checked;
+                const showMuseumEvents = museumCheckbox.checked;
+                const showCostumePartyEvents = costumePartyCheckbox.checked;
+                const showMusicConcertEvents = musicConcertCheckbox.checked;
+                const showRaceEvents = raceCheckbox.checked;
+                const showBookExchangeEvents = bookExchangeCheckbox.checked;
+                const showCinemaEvents = cinemaCheckbox.checked;
+
+                const filteredEvents = events.filter(event => {
+                  // Check if the event name matches the search term
+                  if (event.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    // Check if the event category matches any of the selected checkboxes
+                    if (
+                      (showFoodFairEvents && event.category === "Food Fair") ||
+                      (showMuseumEvents && event.category === "Museum") ||
+                      (showCostumePartyEvents && event.category === "Costume Party") ||
+                      (showMusicConcertEvents && event.category === "Music Concert") ||
+                      (showRaceEvents && event.category === "Race") ||
+                      (showBookExchangeEvents && event.category === "Book Exchange") ||
+                      (showCinemaEvents && event.category === "Cinema")
+                    ) {
+                      return true;
+                    }
+                    // If no checkboxes are selected, just check if the event name matches the search term
+                    if (
+                      !showFoodFairEvents &&
+                      !showMuseumEvents &&
+                      !showCostumePartyEvents &&
+                      !showMusicConcertEvents &&
+                      !showRaceEvents &&
+                      !showBookExchangeEvents &&
+                      !showCinemaEvents
+                    ) {
+                      return true;
+                    }
+                  }
+                  return false;
+                });
+
+                renderEvents(searchTerm, filteredEvents);
+              }
+              </script>
 
             <!-- FOOTER -->
 
@@ -138,3 +209,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
