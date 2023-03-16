@@ -94,47 +94,52 @@
 
               <!-- CARDS --> 
               <div class="cards-main-container row" id="events"></div>
-              <script src="data.js"></script>
+              <!-- <script src="data.json"></script> -->
               <script>
+               fetch('data.json')
+              .then(response => response.json())
+              .then(data => {
                 const eventsDiv = document.getElementById("events");
                 const events = data.events;
 
                 function renderEvents(searchTerm, filteredEvents) {
-                const eventsToRender = filteredEvents || events;
+                  const eventsToRender = filteredEvents || events;
 
-                const eventHTML = eventsToRender
-                  .filter(event =>
-                    event.name.toLowerCase().includes(searchTerm.toLowerCase())
-                  )
-                  .map(event => `
-                    <div class="event-info">
-                      <h2 class="event-title">${event.name}</h2>
-                      <img class="event-image" src="${event.image}" alt="${event.name}" />
-                      <p>Date: ${event.date}</p>
-                      <p>Description: ${event.description}</p>
-                      <p>Category: ${event.category}</p>
-                      <p>Place: ${event.place}</p>
-                      <p>Capacity: ${event.capacity}</p>
-                      <p>Assistance: ${event.assistance}</p>
-                      <p>Price: $${event.price}</p>
-                      <button class="event-details-btn" data-event-id="${event._id}">Details</button>
-                    </div>
-                  `);
+                  const eventHTML = eventsToRender
+                    .filter(event =>
+                      event.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    )
+                    .map(event => `
+                      <div class="event-info">
+                        <h2 class="event-title">${event.name}</h2>
+                        <img class="event-image" src="${event.image}" alt="${event.name}" />
+                        <p>Date: ${event.date}</p>
+                        <p>Description: ${event.description}</p>
+                        <p>Category: ${event.category}</p>
+                        <p>Place: ${event.place}</p>
+                        <p>Capacity: ${event.capacity}</p>
+                        <p>Assistance: ${event.assistance}</p>
+                        <p>Price: $${event.price}</p>
+                        <button class="event-details-btn" data-event-id="${event._id}">Details</button>
+                      </div>
+                    `);
 
-                eventsDiv.innerHTML = eventHTML.join('');
+                  eventsDiv.innerHTML = eventHTML.join('');
 
-                // Add event listeners to the event details buttons
-                const eventDetailsButtons = document.querySelectorAll(".event-details-btn");
-                eventDetailsButtons.forEach(button => {
-                  button.addEventListener("click", () => {
-                    const eventId = button.dataset.eventId;
-                    window.location.href = `event.html?id=${eventId}`;
+                  // Add event listeners to the event details buttons
+                  const eventDetailsButtons = document.querySelectorAll(".event-details-btn");
+                  eventDetailsButtons.forEach(button => {
+                    button.addEventListener("click", () => {
+                      const eventId = button.dataset.eventId;
+                      window.location.href = `event.html?id=${eventId}`;
+                    });
                   });
-                });
-              }
+                }
 
                 // Call renderEvents() with the initial search term (empty string)
                 renderEvents('');
+              })
+              .catch(error => console.error(error));
 
                 // Add event listener to search input
                 const searchInput = document.getElementById('search-input');
