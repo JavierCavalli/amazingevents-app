@@ -50,6 +50,15 @@
 
 /* CHECK & SEARCHBAR */
 
+.checkmark-container-test {
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.searchbar-container-test {
+  margin-left: 30px;
+}
+
 .checkboxes-main {
   display: flex;
   gap: 20px;
