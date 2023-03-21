@@ -1,173 +1,286 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/png" href="/favicon.png">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Amazing Events</title>
-  </head>
-  <body>
-    <div class="home-main-container">
-    <!-- NAVBAR --> 
-        <nav>
-            <div class="navbar-container">
-                <div class="logo-container">
-                    <a href="/index.html"><img class="logo" src="assets/Logo Amazing Events.png" alt="" width="300px"></a>                    
-                </div>
-                <div class="navbar-link-container">
-                    <ul class="navbar-links">
-                        <li><a class="nav-link-a" href="/index.html">Home</a></li>
-                        <li><a class="nav-link-a" href="/upcomingevents.html">Upcoming events</a></li>
-                        <li><a class="nav-link-a" href="/pastevents.html">Past Events</a></li>
-                        <li><a class="nav-link-a" href="/contact.html">Contact</a></li>
-                        <li><a class="nav-link-a" href="/stats.html">Stats</a></li>
-                    </ul>
-            </div>
-            </div>
-        </nav>
-            
-        <main>
-            <!-- SLIDER -->
-            <hr class="solid">
-            <div class="slider-main-container">
-                <a class="slider-chevron" href="/contact.html"><</a>
-                <p class="slider-page">STATS</p>
-                <a class="slider-chevron" href="/index.html">></a>
-            </div>
-            <hr class="solid">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="image/png" href="/favicon.png">
 
-          
-            <!-- STATS GRID -->
-            
-            <div class="row">
-              <div class="column-bg-title">Events Statistics</div>
-              
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-sm-4">Events wit the highest percentage of audience</div>
-              <div class="column-bg col-sm-4">Events with the lowest percentage of attendance</div>
-              <div class="column-bg col-sm-4">Events with larger capacity</div>
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-md-4">1</div>
-              <div class="column-bg col-md-4">2</div>
-              <div class="column-bg col-md-4">3</div>
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-lg-4">4</div>
-              <div class="column-bg col-lg-4">5</div>
-              <div class="column-bg col-lg-4">6</div>
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-xl-4">7</div>
-              <div class="column-bg col-xl-4">8</div>
-              <div class="column-bg col-xl-4">9</div>
-            </div>
+  <title>Amazing Events</title>
+</head>
 
-            <div class="row">
-              <div class="column-bg-title">Upcoming events statistics by category</div>
-              
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-sm-4">Category</div>
-              <div class="column-bg col-sm-4">Revenue</div>
-              <div class="column-bg col-sm-4">Percentage of attendance</div>
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-md-4">1</div>
-              <div class="column-bg col-md-4">2</div>
-              <div class="column-bg col-md-4">3</div>
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-lg-4">4</div>
-              <div class="column-bg col-lg-4">5</div>
-              <div class="column-bg col-lg-4">6</div>
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-xl-4">7</div>
-              <div class="column-bg col-xl-4">8</div>
-              <div class="column-bg col-xl-4">9</div>
-            </div>
+<body>
+  <div class="home-main-container">
+    <!-- NAVBAR -->
+    <nav>
+      <div class="navbar-container">
+        <div class="logo-container">
+          <a href="/index.html"><img class="logo" src="assets/Logo Amazing Events.png" alt="" width="300px"></a>
+        </div>
+        <div class="navbar-link-container">
+          <ul class="navbar-links">
+            <li><a class="nav-link-a" href="/index.html">Home</a></li>
+            <li><a class="nav-link-a" href="/upcomingevents.html">Upcoming events</a></li>
+            <li><a class="nav-link-a" href="/pastevents.html">Past Events</a></li>
+            <li><a class="nav-link-a" href="/contact.html">Contact</a></li>
+            <li><a class="nav-link-a" href="/stats.html">Stats</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-            <div class="row">
-              <div class="column-bg col-xl-4">7</div>
-              <div class="column-bg col-xl-4">8</div>
-              <div class="column-bg col-xl-4">9</div>
-            </div>
+    <main>
+      <!-- SLIDER -->
+      <hr class="solid">
+      <div class="slider-main-container">
+        <a class="slider-chevron" href="/contact.html">&lt;
+        </a>
+        <p class="slider-page">STATS</p>
+        <a class="slider-chevron" href="/index.html">></a>
+      </div>
+      <hr class="solid">
 
-            <div class="row">
-              <div class="column-bg-title">Past Events statistic by category</div>
-              
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-sm-4">Category</div>
-              <div class="column-bg col-sm-4">Revenue</div>
-              <div class="column-bg col-sm-4">Percentage of attendance</div>
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-md-4">1</div>
-              <div class="column-bg col-md-4">2</div>
-              <div class="column-bg col-md-4">3</div>
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-lg-4">4</div>
-              <div class="column-bg col-lg-4">5</div>
-              <div class="column-bg col-lg-4">6</div>
-            </div>
-            
-            <div class="row">
-              <div class="column-bg col-xl-4">7</div>
-              <div class="column-bg col-xl-4">8</div>
-              <div class="column-bg col-xl-4">9</div>
-            </div>
 
-            <div class="row">
-              <div class="column-bg col-xl-4">7</div>
-              <div class="column-bg col-xl-4">8</div>
-              <div class="column-bg col-xl-4">9</div>
-            </div>
+      <!-- STATS GRID -->
 
-            <div class="row">
-              <div class="column-bg col-xl-4">7</div>
-              <div class="column-bg col-xl-4">8</div>
-              <div class="column-bg col-xl-4">9</div>
-            </div>
+      <div class="banner">
+      </div>
+      </header>
+      <main>
+        <div class="container d-flex align-items-center p-3">
+          <div class="container-table">
+            <table class="table caption-top table-bordered">
+              <caption class="border border-5 border-dark-subtle bg-danger-subtle ps-2">Events Statistics</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Events with the highest percentage of attendance</th>
+                  <th scope="col">Events with the lowest percentage of attendance</th>
+                  <th scope="col">Event with larger capacity</th>
+                </tr>
+              </thead>
+              <tbody id="tabla1">
+                <tr>
+                  <td>Metallica</td>
+                  <td>Jurassic Park</td>
+                  <td>15K NY</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table caption-top table-bordered">
+              <caption class="border border-5 border-dark-subtle bg-danger-subtle ps-2">Upcoming Events Statistics by
+                Category
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Category</th>
+                  <th scope="col">Revenues</th>
+                  <th scope="col">Percentage of attendance</th>
+                </tr>
+              </thead>
+              <tbody id="tabla2">
+              </tbody>
+            </table>
+            <table class="table caption-top table-bordered">
+              <caption class="border border-5 border-dark-subtle bg-danger-subtle ps-2">Past Events Statistics by
+                Category
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Category</th>
+                  <th scope="col">Revenues</th>
+                  <th scope="col">Percentage of attendance</th>
+                </tr>
+              </thead>
+              <tbody id="tabla3">
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <script>
+          let urlApi = "https://mindhub-xj03.onrender.com/api/amazing";
+          let eventsPast = [];
+          let eventsUpcoming = [];
+          let revenuesCat = [];
+          let tabla1 = document.getElementById("tabla1");
+          let tabla2 = document.getElementById("tabla2");
+          let tabla3 = document.getElementById("tabla3");
+          let tablaPast = [];
+          let tablaUpcoming = [];
 
-            <!-- FOOTER -->
+          traerDatos();
 
-            <div class="footer-main-container">
-                <div class="social-icons-container">
-                    <a href=""><i class="fa-brands fa-instagram icon fa-2x"></i></a>
-                    <a href=""><i class="fa-brands fa-facebook icon fa-2x"></i></a>
-                    <a href=""><i class="fa-brands fa-whatsapp icon fa-2x"></i></a>
-                </div>
+          async function traerDatos() {
+            try {
+              const response = await fetch(urlApi);
+              const datos = await response.json();
+              pastEvents(datos.events, datos);
+              //console.log(eventsPast);
+              porcentajeAsistencia(eventsPast);
+              tablaPast.forEach((cat) => {
+                ganancias(eventsPast, cat, "past");
+              });
+              tablaUpcoming.forEach((cat) => {
+                ganancias(eventsUpcoming, cat, "upcoming");
+              });
+              console.log(tablaUpcoming);
+              //categoriesFilt(datos.events);
+            } catch (error) {
+              console.error("ERROR" + error);
+            }
+          }
 
-                <div class="cohort">
-                    <h4>COHORT</h4>
-                </div>
-            </div>
+          function currentDate(objeto) {
+            let currentDateString = objeto.currentDate;
+            let currentDate = new Date(currentDateString);
+            return currentDate;
+          }
 
-        </main>
-    </div>
+          function pastEvents(objeto, miJson) {
+            for (evento of objeto) {
+              let eventDateString = evento.date;
+              let eventDate = new Date(eventDateString);
+              if (eventDate < currentDate(miJson)) {
+                eventsPast.push(evento);
+              } else {
+                eventsUpcoming.push(evento);
+              }
+            }
+            categoriesFilt(eventsPast, "past");
+            categoriesFilt(eventsUpcoming, "upcoming");
+          }
+          function categoriesFilt(objeto, tiempo) {
+            let categories = [];
+            objeto.map((event) => {
+              if (!categories.includes(event.category)) {
+                categories.push(event.category);
+              }
+            });
+            console.log(objeto);
+            if (tiempo == "past") {
+              tablaPast = categories;
+              // console.log('eventPast')
+              // console.log(tablaPast)
+            } else {
+              tablaUpcoming = categories;
+              console.log("eventos futuros");
+              console.log(tablaUpcoming);
+            }
+            //console.log(tablaPast)
+          }
+          function ganancias(unArray, categoria, tiempo) {
+            let revenues = 0;
+            let sumaAss = 0;
+            let contCat = 0;
+            for (evento of unArray) {
+              if (evento.category == categoria) {
+                contCat++;
+                revenues +=
+                  (evento.assistance ? evento.assistance : evento.estimate) *
+                  evento.price;
+                sumaAss += parseFloat(
+                  (
+                    ((evento.assistance ? evento.assistance : evento.estimate) * 100) /
+                    evento.capacity
+                  ).toFixed(2)
+                );
+              }
+              // if (evento.assistance && !tablaPast.includes(categoria)) {
+              //     tablaPast.push(categoria);
+              // } else if (!tablaUpcoming.includes(categoria)) {
+              //     tablaUpcoming.push(categoria);
+              // }
+            }
+            sumaAss = parseFloat(sumaAss / contCat).toFixed(2);
+            if (tiempo == "past") {
+              tableTwoandThree(tabla3, categoria, revenues, sumaAss);
+            } else {
+              tableTwoandThree(tabla2, categoria, revenues, sumaAss);
+            }
+            //console.log(categoria + ' ' + sumaAss + '% -- Revenues: $' + revenues)
+          }
+          function tableTwoandThree(tabla, col1, col2, col3) {
+            let fila = document.createElement("tr");
+            fila.innerHTML = `
+    <td>${col1}</td>
+    <td>$ ${col2}.- </td>
+    <td>${col3} %</td>
+    `;
+            tabla.appendChild(fila);
+          }
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
+          function tableOne(objeto) {
+            tabla1.innerHTML = `
+    <tr>
+    <td> ${objeto.eventMayPorAsist} </td>
+    <td> ${objeto.eventMenPorAsist}</td>
+    <td> ${objeto.eventMayCapacity} </td>
+    </tr>
+    `;
+          }
+          function porcentajeAsistencia(unArray) {
+            let contTabla1 = {};
+            let eventMayPorAsist = "";
+            let eventMenPorAsist = "";
+            let eventMayCapacity = "";
+            let porcentajeMay = 0;
+            let porcentajeMen = 100;
+            let capacity = 0;
+            for (evento of unArray) {
+              let auxPorcentaje = ((evento.assistance * 100) / evento.capacity).toFixed(
+                2
+              );
+              if (auxPorcentaje > porcentajeMay) {
+                porcentajeMay = auxPorcentaje;
+                eventMayPorAsist = evento.name;
+              } else if (auxPorcentaje < porcentajeMen) {
+                porcentajeMen = auxPorcentaje;
+                eventMenPorAsist = evento.name;
+              }
+              let auxCapacity = evento.capacity;
+              if (auxCapacity > capacity) {
+                capacity = auxCapacity;
+                eventMayCapacity = evento.name;
+              }
+            }
+            contTabla1.eventMayPorAsist = `${eventMayPorAsist} : ${porcentajeMay}%`;
+            contTabla1.eventMenPorAsist = `${eventMenPorAsist} : ${porcentajeMen}%`;
+            contTabla1.eventMayCapacity = `${eventMayCapacity} : ${capacity}`;
+            tableOne(contTabla1);
+          }
+
+        </script>
+      </main>
+
+      <!-- FOOTER -->
+
+      <div class="footer-main-container">
+        <div class="social-icons-container">
+          <a href=""><i class="fa-brands fa-instagram icon fa-2x"></i></a>
+          <a href=""><i class="fa-brands fa-facebook icon fa-2x"></i></a>
+          <a href=""><i class="fa-brands fa-whatsapp icon fa-2x"></i></a>
+        </div>
+
+        <div class="cohort">
+          <h4>COHORT</h4>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="../scripts/stats.js"></script>
+</body>
+
 </html>s
