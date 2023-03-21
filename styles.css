@@ -50,6 +50,15 @@
 
 /* CHECK & SEARCHBAR */
 
+.checkmark-container-test {
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.searchbar-container-test {
+  margin-left: 30px;
+}
+
 .checkboxes-main {
   display: flex;
   gap: 20px;
@@ -154,64 +163,6 @@
   border: none;
 }
 
-/* CARDS */
-
-.event-list-test-test {
-  display: flex;
-}
-
-.event-info {
-  justify-content: center;
-  align-items: center;
-}
-
-.event-title {
-  font-size: 24px;
-  color: red;
-}
-
-.event-image {
-  height: 300px;
-  width: 300px;
-}
-
-.cards-main-container {
-  display: flex;
-  justify-content: center;
-}
-
-.card {
-  margin: 30px;
-}
-
-.card-body {
-  display: grid;
-  text-align: center;
-}
-
-.card-bottom {
-  display: flex;
-  justify-content: space-around;
-}
-
-.card-price {
-  margin-top: 10px;
-}
-
-.btn {
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border: #000 2px solid;
-}
-
-.btn:hover {
-  background-color: #000;
-  color: #fff;
-  border: none;
-  transition: 0.3s;
-}
-
 /* FOOTER */
 
 .footer-main-container {
@@ -279,85 +230,42 @@
   border: #000 1px solid;
 }
 
-/* HAMBURGUER ICON */
+/* NEW CARDS JSON */
 
-/* GRID ATTEMPT */
-
-#events {
+.event-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, auto);
-  grid-gap: 20px;
-}
-
-.event-info {
-  width: 85%;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
   text-align: center;
-}
-
-.event-title {
-  font-size: 24px;
-  margin-bottom: 10px;
+  margin-top: 30%;
 }
 
 .event-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+  max-width: 400px;
+  max-height: 400px;
+  justify-self: center;
+  margin-bottom: 20px;
 }
 
-.event-info p {
-  margin: 5px 0;
+#events-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  margin: 30px;
 }
 
-/* INDIVIDUAL EVENT CARD INFO */
-
-.event-info-card {
-    display: grid;
-    width: 50%;    
-    margin: 0 auto;  
-    text-align: center;
-    }
-  
-.event-image-card {
-    display: flex;
-    justify-self: center;
-    width: 450px;
-  }
-
-.event-title-card {
-  font-size: 54px;
-  color: rgba(225, 0, 0, 0.722);
-}
-
-.event-date-card {
-  font-weight: 600;
-  font-size: 40px;
-  margin: 20px 0px 0px 0px;
-}
-
-.event-description-card {
-  font-size: 24px;
-  font-weight: 600px;
-}
-
-.event-categories-container {
-  display: flex;
-  justify-content: space-around;
-}
-
-.event-category {
-  margin: 4px;
+.event-card {
+  border: 2px #000 solid;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
 /* MEDIA QUERIES */
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .check-search-main-container {
     display: grid;
     justify-content: center;
@@ -392,9 +300,16 @@
   .detail-image-container {
     margin-bottom: 20px;
   }
+
+  #events-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: 30px;
+  }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
   .details-main-container {
     display: grid;
     justify-content: center;
@@ -405,5 +320,11 @@
   .details-text-container {
     display: grid;
     margin-right: 15px;
+  }
+  #events-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    margin: 30px;
   }
 }
