@@ -139,7 +139,7 @@
           .then(data => {
             const eventsContainer = document.getElementById('events-container');
             const currentDate = new Date(data.currentDate);
-            let filteredData = data.events.filter(event => new Date(event.date) >= currentDate);
+            let filteredData = data.events.filter(event => new Date(event.date) > currentDate);
 
             const categoryCheckboxes = document.getElementsByName('category');
             categoryCheckboxes.forEach(checkbox => {
