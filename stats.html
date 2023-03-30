@@ -157,6 +157,7 @@
             categoriesFilt(eventsPast, "past");
             categoriesFilt(eventsUpcoming, "upcoming");
           }
+
           function categoriesFilt(objeto, tiempo) {
             let categories = [];
             objeto.map((event) => {
@@ -210,21 +211,21 @@
           function tableTwoandThree(tabla, col1, col2, col3) {
             let fila = document.createElement("tr");
             fila.innerHTML = `
-    <td>${col1}</td>
-    <td>$ ${col2}.- </td>
-    <td>${col3} %</td>
-    `;
+            <td>${col1}</td>
+            <td>$ ${col2}.- </td>
+            <td>${col3} %</td>
+            `;
             tabla.appendChild(fila);
           }
 
           function tableOne(objeto) {
             tabla1.innerHTML = `
-    <tr>
-    <td> ${objeto.eventMayPorAsist} </td>
-    <td> ${objeto.eventMenPorAsist}</td>
-    <td> ${objeto.eventMayCapacity} </td>
-    </tr>
-    `;
+            <tr>
+            <td> ${objeto.eventMayPorAsist} </td>
+            <td> ${objeto.eventMenPorAsist}</td>
+            <td> ${objeto.eventMayCapacity} </td>
+            </tr>
+            `;
           }
           function porcentajeAsistencia(unArray) {
             let contTabla1 = {};
